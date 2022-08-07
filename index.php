@@ -4,4 +4,3 @@
 
     echo Home::getHome();
 
-?>

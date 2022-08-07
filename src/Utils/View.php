@@ -1,64 +1,54 @@
 <?php
-    namespace Imfree\Free\Utils;
-    use FilesystemIterator;
+ namespace Imfree\Free\Utils;
 
-    class View{
+
+class View{
+
+    const pathToElements = 'resources/pages/elements/';
+
     
-    public static $contentView;
+	private static function getContentView(string $view) :string{
+		$file = __DIR__ . "/../../resources/pages/{$view}.html";
+		return file_exists($file) ? file_get_contents($file) : '';
+    }
 
-    /**
-     * get all the content of the view
-     *
-     * @param [type] $view
-     * @return void
-     */
+    public static function getPathToElements(){
+        return self::pathToElements;
+    }
 
-    private static function getContentView(string $view) :string{
-
-        $file = __DIR__ . "/../../resources/pages/". $view . ".html" ;
-    
-        return file_exists($file) ? file_get_contents($file) : '';
-
+    public static function getCard(string $card){
+        $cardfile = __DIR__ . "/../../resources/pages/elements/{$card}.html";
+        return file_exists($cardfile) ? file_get_contents($cardfile) : '';
     }
 
 
+	public static function getNameElements() :array{
+		$elements = scandir(self::getPathToElements());
+		$elements = array_slice($elements,2);
 
-    public static function getElements(){
-        $files = [];
+		return $elements;
+	}
 
-        $pathToElements = 'resources/pages/elements/';
-        $elements = scandir($pathToElements);
-        $elements = array_slice($elements, 2);
-        
-        foreach($elements as $key  => $element){
-            $files[$key] = file_get_contents($pathToElements . $element);
-        }
-        
-        return $files;
-    }
+	public static function getElements() :array{
+		$files = [];
+		$elements = self::getNameElements();
+		rsort($elements);
 
+		foreach($elements as $key => $element){
+			$files[$key] = file_get_contents(self::getPathToElements() . $element);
+		}
 
+		return $files;
+	}
 
-    
-    /**
-     * It will render all view files
-     *
-     * @param string $view
-     * @param array $vars
-     * @return string
-     */
-
-    public static function render(string $view,array $vars) :mixed{
+    public static function render(string $view, array $vars) :mixed{
         $contentView = self::getContentView($view);
-        $keys        = array_keys($vars);
-        
-        $keys        = array_map(function($item){
-            return '{{'. $item . '}}';
-        },$keys);
-        
-    
-        return str_replace($keys, array_values($vars), $contentView);
+		$keys = array_keys($vars);
+		$keys = array_map(function($item){
+			return '{{'.$item.'}}';
+		},$keys);
+
+		return str_replace($keys, array_values($vars), $contentView);
     }
 
-    }
-?>
+}

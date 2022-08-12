@@ -19,32 +19,39 @@
     public static function getHome() {
         $nameElement = self::nameElements();
         $content = View::getElements();
-        self::settingCard();
-        /* $games = new FreeGames; */
-        /* var_dump($games->contentGames()); */
-        /* trazer a pagina já renderizando o conteudo da api */
+        self::buildCard();
+
         return View::render("index", [
             $nameElement[0] => $content[0],
             $nameElement[1] => $content[1],
             $nameElement[2] => $content[2]
-          ]);
+        ]);
+
     }
 
-    public static function settingCard(){
-        $content = View::getPathToElements().'content.html';
-        $card = View::getCard("card");
-        $fileSize = filesize($content);
-        $totalSize = $fileSize * 10;
-        die();
-        if($fileSize == $totalSize){
-            /* "don't do anything" */
-        }else{
-            for($x = 0; $x <= 10; $x++){
-                file_put_contents($content,$card, FILE_APPEND);
-                continue;
-            } 
+    public static function buildCard(){
+        $content = View::getPathToElements();
+
+        $contentCards = [];
+        $freegames = new FreeGames;
+        $games = $freegames->contentGames();
+
+        for($x = 0; $x <= 10; $x++){
+
+            $contentCards[$x] = "
+                    <div class='column'>
+                        <div class='main-card'>
+                            <div class='card-image'>
+                                <img src=". $games[$x]['thumbnail'] .">
+                            </div>
+                         <div class='card-description'>$games[0]['short_description']</div>
+                        </div>
+                    </div>
+                    ";
+
+          file_put_contents($content . "content.html",$contentCards);
         }
-        
     }
+
 
   }

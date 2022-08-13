@@ -1,8 +1,57 @@
 a {
-    text-decoration:none
+  text-decoration: none;
 }
 
-
-.button{
-
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 255px);
+  gap: 60px;
+  justify-content: center;
 }
+
+.main-card {
+    position: relative;
+    overflow: hidden;
+    height: 180px;
+}
+
+.card-image img{
+    border-radius: 10px;
+}
+
+.card-title {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-weight: bold;
+    padding: 15px;
+    background: var(--sec-black);
+    border-radius: 0 0 10px 10px;
+}
+
+.card-description {
+    position: absolute;
+    bottom: -80px;
+    font-size: 15px;
+    padding-left: 10px;
+    transition: .6s all ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.main-card:hover .card-description{
+    bottom: 10px;
+    opacity: 1;
+}
+
+.main-card:hover .card-title{
+    height: 90%;
+    bottom: -40px;
+    padding-top: 5px;
+}
+

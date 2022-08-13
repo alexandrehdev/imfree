@@ -47,7 +47,7 @@
                                    </div>
                                 ";
 
-            file_put_contents($content . "content.html",$contentCards);
+            /* file_put_contents($content . "content.html",$contentCards); */
         }
     }
 

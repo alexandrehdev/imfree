@@ -1,0 +1,15 @@
+{
+    "name": "imfree/free",
+    "autoload": {
+        "psr-4": {
+            "Imfree\\Free\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "alexandrehdev",
+            "email": "hallyssonrdev@gmail.com"
+        }
+    ],
+    "require": {}
+}

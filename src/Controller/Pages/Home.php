@@ -36,20 +36,17 @@
         $freegames = new FreeGames;
         $games = $freegames->contentGames();
 
-        for($x = 0; $x <= 10; $x++){
+        for($x = 0; $x <= 4; $x++){
 
-            $contentCards[$x] = "
-                    <div class='column'>
-                        <div class='main-card'>
-                            <div class='card-image'>
-                                <img src=". $games[$x]['thumbnail'] .">
-                            </div>
-                         <div class='card-description'>$games[0]['short_description']</div>
-                        </div>
-                    </div>
-                    ";
+            $contentCards[$x] = " <div class='main-card'>
+                                      <div class='card-image'>
+                                        <img src=". $games[$x]['thumbnail'] .">
+                                      </div>
+                                      <div class='card-description'>".$games[$x]['short_description']."</div>
+                                   </div>
+                                ";
 
-          file_put_contents($content . "content.html",$contentCards);
+            file_put_contents($content . "content.html",$contentCards);
         }
     }
 

@@ -8,7 +8,9 @@
     "authors": [
         {
             "name": "alexandrehdev",
-            "email": "hallyssonrdev@gmail.com"
+            "email": "hallyssonrdev@gmail.com",
+            "name": "eduardo silva",
+            "email": "eduardosilvaprogramador@gmail.com"
         }
     ],
     "require": {}

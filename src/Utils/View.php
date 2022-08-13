@@ -16,12 +16,6 @@ class View{
         return self::pathToElements;
     }
 
-    public static function getCard(string $card){
-        $cardfile = __DIR__ . "/../../resources/pages/elements/{$card}.html";
-        return file_exists($cardfile) ? file_get_contents($cardfile) : '';
-    }
-
-
 	public static function getNameElements() :array{
 		$elements = scandir(self::getPathToElements());
 		$elements = array_slice($elements,2);

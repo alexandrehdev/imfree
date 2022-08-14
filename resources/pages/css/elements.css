@@ -1,3 +1,18 @@
+header {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1100px;
+    background: var(--main-purple);
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+header h1{
+    font-size: 30px;
+    color: var(--main-white)
+}
+
 a {
   text-decoration: none;
 }

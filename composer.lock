@@ -1,0 +1,54 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "962164c77c9d2e64877bbff0b2106d95",
+    "packages": [
+        {
+            "name": "saphira/connectdb",
+            "version": "v0.1-alpha",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alexandrehdev/saphira.git",
+                "reference": "859522cc4e1051b439f672cc2be16c7e337a310b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alexandrehdev/saphira/zipball/859522cc4e1051b439f672cc2be16c7e337a310b",
+                "reference": "859522cc4e1051b439f672cc2be16c7e337a310b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Saphira\\Connectdb\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "alexandrehdev"
+                }
+            ],
+            "description": "PHP Package that allows you to connect to database and exec some querys with functions",
+            "support": {
+                "issues": "https://github.com/alexandrehdev/saphira/issues",
+                "source": "https://github.com/alexandrehdev/saphira/tree/v0.1-alpha"
+            },
+            "time": "2022-07-08T18:44:40+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "saphira/connectdb": 15
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

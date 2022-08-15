@@ -1,6 +1,7 @@
 <?php
     namespace Imfree\Free\Controller\Pages;
-    use Imfree\Free\Controller\Pages\FreeGames;
+    use Saphira\Connectdb\Actions\DataActions;
+    use Saphira\Connectdb\Common\Enviroment;
     use Imfree\Free\Utils\View;
 
     class Home{
@@ -30,23 +31,23 @@
     }
 
     public static function buildCard(){
+        Enviroment::load(__DIR__);
+        $games = DataActions::selectAll("Games");
         $content = View::getPathToElements();
-
         $contentCards = [];
-        $freegames = new FreeGames;
-        $games = $freegames->contentGames();
 
-        for($x = 0; $x <= 30; $x++){
-
-            $contentCards[$x] = " <div class='main-card'>
-                                      <div class='card-image'>
-                                        <img src=". $games[$x]['thumbnail'] .">
-                                      </div>
-                                      <div class='card-title'>".$games[$x]['title']."</div>
-                                      <div class='card-description'>".$games[$x]['short_description']."</div>
-                                   </div>
-                                ";
-
+        for($x = 0; $x <= 27; $x++){
+            $contentCards[$x] = 
+               "<div class='main-card'>
+                   <div class='release-date'>".$games[$x]["release_date"]."</div>
+                   <div class='card-image'>
+                       <img src=". $games[$x]['image_url'] .">
+                    </div>
+                     <div class='card-title'>".$games[$x]['title']."</div>
+                     <div class='card-description'>".$games[$x]['short_description']."</div>
+                     <div class='platform'>".$games[$x]["platform"]."</div>
+                </div>
+               ";
             /* file_put_contents($content . "content.html",$contentCards); */
         }
     }

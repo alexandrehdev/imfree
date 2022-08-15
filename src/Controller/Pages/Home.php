@@ -7,14 +7,14 @@
     class Home{
 
     public static function nameElements() :array{
-		$elements = View::getNameElements();
-		$elements = array_map(function($item){
-        return basename($item,'.html');
-		},$elements);
+	$elements = View::getNameElements();
+	$elements = array_map(function($item){
+           return basename($item,'.html');
+	 },$elements);
 
-		rsort($elements);
+	rsort($elements);
 
-		return $elements;
+	return $elements;
     }
 
     public static function getHome() {

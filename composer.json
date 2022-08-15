@@ -8,10 +8,12 @@
     "authors": [
         {
             "name": "alexandrehdev",
-            "email": "hallyssonrdev@gmail.com",
+            "email": "alexandrehdevhl@gmail.com",
             "name": "eduardo silva",
             "email": "eduardosilvaprogramador@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "saphira/connectdb": "v0.1-alpha"
+    }
 }

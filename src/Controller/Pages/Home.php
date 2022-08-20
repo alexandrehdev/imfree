@@ -14,20 +14,30 @@
 
 	rsort($elements);
 
-	return $elements;
+    return $elements;
     }
 
-    public static function getHome() {
+    public static function getUnloggedHome() {
         $nameElement = self::nameElements();
         $content = View::getElements();
         self::buildCard();
-
         return View::render("index", [
             $nameElement[0] => $content[0],
-            $nameElement[1] => $content[1],
+            $nameElement[3] => $content[3],
             $nameElement[2] => $content[2]
         ]);
 
+    }
+
+    public static function getLoggedHome(){
+        $nameElement = self::nameElements();
+        $content = View::getElements();
+        self::buildCard();
+        return View::render("index", [
+            $nameElement[0] => $content[1],
+            $nameElement[3] => $content[4],
+            $nameElement[2] => $content[2]
+        ]);                  
     }
 
     public static function buildCard(){

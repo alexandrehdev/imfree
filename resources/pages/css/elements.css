@@ -4,6 +4,18 @@
   padding: 0 15px;
 }
 
+.button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: var(--main-black);
+    color: var(--main-white);
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.button:hover{opacity: 0.9;}
+
 header {
     position: fixed;
     top: 0;
@@ -68,6 +80,8 @@ header .show-menu{
 .header-menu li:last-child a{
     color: var(--main-red);
 }
+
+.header-register .button{padding: 8px 25px;}
 
 a {
   text-decoration: none;

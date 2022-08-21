@@ -7,14 +7,14 @@
     class Home{
 
     public static function nameElements() :array{
-	$elements = View::getNameElements();
-	$elements = array_map(function($item){
+	    $elements = View::getNameElements();
+	    $elements = array_map(function($item){
            return basename($item,'.html');
-	 },$elements);
+	    },$elements);
 
-	rsort($elements);
+	    rsort($elements);
 
-    return $elements;
+        return $elements;
     }
 
     public static function getUnloggedHome() {
@@ -38,6 +38,17 @@
             $nameElement[3] => $content[4],
             $nameElement[2] => $content[2]
         ]);                  
+    }
+
+    public static function getCheckIn(){
+        $nameElement = self::nameElements();
+        $content = View::getElements();
+        self::buildCard();
+        return View::render("index", [
+            $nameElement[0] => $content[0],
+            $nameElement[3] => $content[5],
+            $nameElement[2] => $content[2],
+        ]);
     }
 
     public static function buildCard(){

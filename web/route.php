@@ -7,10 +7,11 @@ Route::redirect("/", function(){
     Service::callUnloggedPage();
 });
 
-Route::redirect("/register", function(){
-  echo "Mostrar página para se registrar";
+Route::redirect("/checkin", function(){
+    Service::callCheckIn();
 });
 
-Route::redirect("/login", function(){
-    Service::callLoggedPage();
-});
+Route::redirect("/checkin/register", function(){
+   Service::processedRegisterData();
+});                 
+

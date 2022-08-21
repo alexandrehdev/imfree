@@ -1,77 +1,82 @@
 <div class="checkin">
   <div class="forms">
-    <form class="form form-register" method="POST" action="" autocomplete="off">
+    <form class="form form-register" method="post" action="/checkin/register" autocomplete="off">
       <p>Register</p>
       <div class="form-control">
-        <label for="register-username">Nome de usuario</label
-        ><input
+        <label for="register-username">Nome de usuario</label>
+        <input
           type="text"
           id="register-username"
           placeholder="Nome de usuário"
-        /><img class="err" src="/resources/pages/icons/error.svg" /><img
+          name="username"/>
+        <img class="err" src="/resources/pages/icons/error.svg" />
+        <img
           class="ess"
-          src="/resources/pages/icons/checkmark.svg"
-        /><small>Mensagem de erro</small>
+          src="/resources/pages/icons/checkmark.svg"/>
+       <small>Mensagem de erro</small>
       </div>
       <div class="form-control">
-        <label for="register-email">Email</label
-        ><input
+        <label for="register-email">Email</label>
+        <input
           type="text"
           id="register-email"
           placeholder="Insira o seu endereço de email"
-        /><img class="err" src="/resources/pages/icons/error.svg" /><img
-          class="ess"
-          src="/resources/pages/icons/checkmark.svg"
-        /><small>Mensagem de erro</small>
+          name="email"/>
+         <img class="err" src="/resources/pages/icons/error.svg" />
+         <img class="ess" src="/resources/pages/icons/checkmark.svg"/>
+         <small>Mensagem de erro</small>
       </div>
       <div class="form-control">
-        <label for="register-password">Senha</label
-        ><input
+        <label for="register-password">Senha</label>
+        <input
           type="password"
           id="register-password"
           placeholder="Informe sua senha"
-        /><img class="err" src="/resources/pages/icons/error.svg" /><img
+          name="password"/>
+        <img class="err" src="/resources/pages/icons/error.svg" /><img
           class="ess"
-          src="/resources/pages/icons/checkmark.svg"
-        /><small>Mensagem de erro</small>
+          src="/resources/pages/icons/checkmark.svg"/>
+        <small>Mensagem de erro</small>
       </div>
       <div class="form-control">
-        <label for="passwordConfirmation">Confirmar Senha</label
-        ><input
+        <label for="passwordConfirmation">Confirmar Senha</label>
+        <input
           type="password"
           id="passwordConfirmation"
           placeholder="Confirmar sua senha"
-        /><img class="err" src="/resources/pages/icons/error.svg" /><img
-          class="ess"
-          src="/resources/pages/icons/checkmark.svg"
-        /><small>Mensagem de erro</small>
+          name="confirmPassword"/>
+        <img class="err" src="/resources/pages/icons/error.svg" />
+        <img class="ess" src="/resources/pages/icons/checkmark.svg"/>
+        <small>Mensagem de erro</small>
       </div>
-      <div><input id="register" type="submit" value="registar" /></div>
+      <div><input id="register" type="submit" value="Cadastrar" /></div>
     </form>
-    <form
-        class="form form-login" method="POST" action="" autocomplete="off">
+
+
+
+    <form class="form form-login" method="POST" action="" autocomplete="off">
       <p>Login</p>
       <div class="form-control">
-        <label for="login-email">Email</label
-        ><input
+        <label for="login-email">Email</label>
+        <input
           type="text"
           id="login-email"
-          placeholder="Insira o seu endereço de email"
-        /><img class="err" src="/resources/pages/icons/error.svg" /><img
+          placeholder="Insira o seu endereço de email"/>
+        <img class="err" src="/resources/pages/icons/error.svg" />
+        <img
           class="ess"
-          src="/resources/pages/icons/checkmark.svg"
-        /><small>Mensagem de erro</small>
+          src="/resources/pages/icons/checkmark.svg"/>
+        <small>Mensagem de erro</small>
       </div>
       <div class="form-control">
-        <label for="login-password">Senha</label
-        ><input
+        <label for="login-password">Senha</label>
+        <input
           type="password"
           id="login-password"
-          placeholder="Informe sua senha"
-        /><img class="err" src="/resources/pages/icons/error.svg" /><img
-          class="ess"
-          src="/resources/pages/icons/checkmark.svg"
-        /><small>Mensagem de erro</small>
+          placeholder="Informe sua senha"/>
+        <img class="err" src="/resources/pages/icons/error.svg" />
+        <img class="ess" src="/resources/pages/icons/checkmark.svg"/>
+        <small>Mensagem de erro</small>
       </div>
       <div><input id="login" type="submit" value="Login" /></div>
     </form>

@@ -7,29 +7,28 @@ class User{
     
     function __construct()
     {
-
       Enviroment::load(__DIR__);
-      
     }
 
-    public function registerUser(array $formValues){
+    public function registerUser(array $user){
 
-        DataActions::insertValues("User",
-            [
-            "name",
-            "email",
-            "password",
-            "confirm_password"],
-            [
-             $formValues["userName"],
-             $formValues["email"],
-             $formValues["password"],
-             $formValues["confirmPassword"]
-            ]
-        );
+       /* DataActions::insertValues("User", */
+       /*      [ */
+       /*      "name", */
+       /*      "email", */
+       /*      "password", */
+       /*      "confirm_password"], */
+       /*      [ */
+       /*       $user["userName"], */
+       /*       $user["email"], */
+       /*       $user["password"], */
+       /*       $user["confirmPassword"] */
+       /*      ] */
+       /* ); */
+
     }    
-
     
+
 
      
 }

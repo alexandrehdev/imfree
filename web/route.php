@@ -12,6 +12,6 @@ Route::redirect("/checkin", function(){
 });
 
 Route::redirect("/checkin/register", function(){
-   Service::processedRegisterData();
+    Service::processData();
 });                 
 

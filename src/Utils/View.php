@@ -7,10 +7,10 @@ class View{
     const pathToElements = 'resources/pages/elements/';
 
     
-	private static function getContentView(string $view) :string{
+	public static function getContentView(string $view) :string{
 	   $file = __DIR__ . "/../../resources/pages/{$view}.html";
 	   return file_exists($file) ? file_get_contents($file) : '';
-     }
+    }
 
     public static function getPathToElements(){
          return self::pathToElements;

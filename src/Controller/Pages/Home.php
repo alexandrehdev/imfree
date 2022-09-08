@@ -52,32 +52,30 @@
     }
 
     public static function buildCard(){
-        Enviroment::load(__DIR__);
-        $games = DataActions::selectAll("Games");
         $content = View::getPathToElements();
         $contentCards = [];
 
-        for($x = 0; $x <= 27; $x++){
-            $contentCards[$x] = 
-               "<div class='main-card'>
-                   <div class='release-date'>".$games[$x]["release_date"]."</div>
-                   <div class='card-image'>
-                       <img src=". $games[$x]['image_url'] .">
-                    </div>
-                    <div class='card-content'>
-                        <div class='card-title'>".$games[$x]['title']."</div>
-                        <div class='card-description'>".$games[$x]['short_description']."</div>
-                        <div class='card-btns'>
-                            <a class='card-btn-more' href='/'>See More</a>
-                            <button class='card-btn-like' type='submit'>
-                                <img src='resources/pages/icons/like.svg' alt='like'>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-               ";
-            /* file_put_contents($content . "content.html",$contentCards); */
-        }
+/*         for($x = 0; $x <= 27; $x++){ */
+/*             $contentCards[$x] = */ 
+/*                "<div class='main-card'> */
+/*                    <div class='release-date'>".$games[$x]["release_date"]."</div> */
+/*                    <div class='card-image'> */
+/*                        <img src=". $games[$x]['image_url'] ."> */
+/*                     </div> */
+/*                     <div class='card-content'> */
+/*                         <div class='card-title'>".$games[$x]['title']."</div> */
+/*                         <div class='card-description'>".$games[$x]['short_description']."</div> */
+/*                         <div class='card-btns'> */
+/*                             <a class='card-btn-more' href='/'>See More</a> */
+/*                             <button class='card-btn-like' type='submit'> */
+/*                                 <img src='resources/pages/icons/like.svg' alt='like'> */
+/*                             </button> */
+/*                         </div> */
+/*                     </div> */
+/*                 </div> */
+/*                "; */
+/*             file_put_contents($content . "content.html",$contentCards); */
+/*         } */
     }
 
 

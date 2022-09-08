@@ -4,22 +4,23 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "962164c77c9d2e64877bbff0b2106d95",
+    "content-hash": "b32ed94fc1b18b531b6959cbd8d3faa0",
     "packages": [
         {
             "name": "saphira/connectdb",
-            "version": "v0.1-alpha",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/alexandrehdev/saphira.git",
-                "reference": "859522cc4e1051b439f672cc2be16c7e337a310b"
+                "reference": "ee359a6e8e43b7254fae902e15b6c8f1656f2524"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alexandrehdev/saphira/zipball/859522cc4e1051b439f672cc2be16c7e337a310b",
-                "reference": "859522cc4e1051b439f672cc2be16c7e337a310b",
+                "url": "https://api.github.com/repos/alexandrehdev/saphira/zipball/ee359a6e8e43b7254fae902e15b6c8f1656f2524",
+                "reference": "ee359a6e8e43b7254fae902e15b6c8f1656f2524",
                 "shasum": ""
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -35,16 +36,16 @@
             "description": "PHP Package that allows you to connect to database and exec some querys with functions",
             "support": {
                 "issues": "https://github.com/alexandrehdev/saphira/issues",
-                "source": "https://github.com/alexandrehdev/saphira/tree/v0.1-alpha"
+                "source": "https://github.com/alexandrehdev/saphira/tree/master"
             },
-            "time": "2022-07-08T18:44:40+00:00"
+            "time": "2022-08-29T17:20:51+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "saphira/connectdb": 15
+        "saphira/connectdb": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

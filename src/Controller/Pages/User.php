@@ -1,13 +1,40 @@
 <?php
 namespace Imfree\Free\Controller\Pages;
 use Imfree\Free\Model\User as UserModel;
-use Imfree\Free\Utils\View;
 use Imfree\Free\Controller\Pages\BuilderRegister;
+use Saphira\Connectdb\Actions\DataActions;
 
 class User{
     
     private $userData = [];
+
+    private DataActions $dataActions;
+
+    private UserModel $userModel;
+
+
+    public function getDataActions() :object{
+        return $this->dataActions;
+    }
+
+    public function setDataActions(DataActions $dataActions) :void{
+        $this->dataActions = $dataActions;
+    }
+
+    public function getUserModel() :object{
+        return $this->userModel;
+    }
+
+    public function setUserModel(UserModel $userModel) :void{
+        $this->userModel = $userModel;
+    }
+
+    function __construct(){
+        $this->setUserModel(new UserModel());
+        $this->setDataActions(new DataActions(__DIR__));
+    }
     
+
     public $keys = [
         "username",
         "email",
@@ -19,10 +46,10 @@ class User{
         $builder = new BuilderRegister;
 
         $this->userData = [
-            "username"  => $builder->getUsername(),
+            "user"  => $builder->getUsername(),
             "email"     => $builder->getEmail(),
-            "password"  => $builder->getPassword(),
-            "confirmPassword" => $builder->getConfirmPassword(),
+            "pwd"  => password_hash($builder->getPassword(), PASSWORD_BCRYPT),
+            "confirmPwd" => password_hash($builder->getConfirmPassword(), PASSWORD_BCRYPT),
         ];
 
         return $this->userData;
@@ -30,9 +57,21 @@ class User{
 
 
     public function secureData(){
-        /* hash password */ 
-        /* send to database */ 
+       $userModel = $this->getUserModel();
        $userData = $this->receiveData(); 
+       $dataActions = $this->getDataActions();
+       $dataActions->setTable("User");
+       $dataActions->setColumns("email");
+       $dataActions->setCondition("email = '" . $userData["email"] ."'");
+       $response = $dataActions->selectColsWhere();
+       $existAccount = count($response);
+
+       if($existAccount == 0){
+         $userModel->registerUser($userData,$dataActions);
+       }else{
+           echo "Conta já existe";
+       }
+       
 
     }
     

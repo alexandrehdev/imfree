@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/alexandrehdev/saphira.git",
-                "reference": "ee359a6e8e43b7254fae902e15b6c8f1656f2524"
+                "reference": "7c9b1dcc73198e7e114184ed35c15c43469e5a2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alexandrehdev/saphira/zipball/ee359a6e8e43b7254fae902e15b6c8f1656f2524",
-                "reference": "ee359a6e8e43b7254fae902e15b6c8f1656f2524",
+                "url": "https://api.github.com/repos/alexandrehdev/saphira/zipball/7c9b1dcc73198e7e114184ed35c15c43469e5a2a",
+                "reference": "7c9b1dcc73198e7e114184ed35c15c43469e5a2a",
                 "shasum": ""
             },
             "default-branch": true,
@@ -38,7 +38,7 @@
                 "issues": "https://github.com/alexandrehdev/saphira/issues",
                 "source": "https://github.com/alexandrehdev/saphira/tree/master"
             },
-            "time": "2022-08-29T17:20:51+00:00"
+            "time": "2022-09-14T23:59:32+00:00"
         }
     ],
     "packages-dev": [],

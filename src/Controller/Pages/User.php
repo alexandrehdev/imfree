@@ -20,8 +20,8 @@ class User{
     public function setDataActions(DataActions $dataActions) :void{
         $this->dataActions = $dataActions;
     }
-
-    public function getUserModel() :object{
+    
+    public function getUserModel() :UserModel{
         return $this->userModel;
     }
 
@@ -42,12 +42,13 @@ class User{
         "confirmPassword"
     ];
 
+
     public function receiveData() :array{
         $builder = new BuilderRegister;
 
         $this->userData = [
             "user"  => $builder->getUsername(),
-            "email"     => $builder->getEmail(),
+            "email" => $builder->getEmail(),
             "pwd"  => password_hash($builder->getPassword(), PASSWORD_BCRYPT),
             "confirmPwd" => password_hash($builder->getConfirmPassword(), PASSWORD_BCRYPT),
         ];
@@ -56,23 +57,15 @@ class User{
     }
 
 
-    public function secureData(){
-       $userModel = $this->getUserModel();
-       $userData = $this->receiveData(); 
+    public function registerUser(){
        $dataActions = $this->getDataActions();
-       $dataActions->setTable("User");
-       $dataActions->setColumns("email");
-       $dataActions->setCondition("email = '" . $userData["email"] ."'");
-       $response = $dataActions->selectColsWhere();
-       $existAccount = count($response);
+       $userData = $this->receiveData(); 
+       $userModel = $this->getUserModel(); 
+       $response = $userModel->processUser($userData, $dataActions);
 
-       if($existAccount == 0){
-         $userModel->registerUser($userData,$dataActions);
-       }else{
-           echo "Conta já existe";
+       if($response == "success"){
+           header("Location: /feed");
        }
-       
-
     }
     
 

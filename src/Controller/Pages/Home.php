@@ -1,7 +1,5 @@
 <?php
     namespace Imfree\Free\Controller\Pages;
-    use Saphira\Connectdb\Actions\DataActions;
-    use Saphira\Connectdb\Common\Enviroment;
     use Imfree\Free\Utils\View;
 
     class Home{

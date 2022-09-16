@@ -15,3 +15,6 @@ Route::redirect("/checkin/register", function(){
     Service::processData();
 });                 
 
+Route::redirect("/feed",function(){
+    Service::callLoggedPage();
+});

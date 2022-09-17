@@ -59,13 +59,14 @@
 
 
 
-    <form class="form form-login" method="POST" action="" autocomplete="off">
+    <form class="form form-login" method="POST" action="/checkin/login" autocomplete="off">
       <p>Login</p>
       <div class="form-control">
         <label for="login-email">Email</label>
         <input
           type="text"
           id="login-email"
+          name="emailLogin"
           placeholder="Insira o seu endereço de email"/>
         <img class="err" src="/resources/pages/icons/error.svg" />
         <img
@@ -78,6 +79,7 @@
         <input
           type="password"
           id="login-password"
+          name="passwordLogin"
           placeholder="Informe sua senha"/>
         <img class="err" src="/resources/pages/icons/error.svg" />
         <img class="ess" src="/resources/pages/icons/checkmark.svg"/>

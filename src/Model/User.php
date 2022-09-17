@@ -5,51 +5,66 @@
 class User{
 
 
-    /**
-     * validateUser 
-     * 
-     * @param array $user 
-     * @param DataActions $dataActions 
-     * @access public
-     * @return void
-     */
+     private DataActions $dataActions;
 
-    public function validateUser(array $user, DataActions $dataActions) :bool{
+
+
+     public function getDataActions(){
+        return $this->dataActions;
+     }
+
+     public function setDataActions(DataActions $dataActions){
+        $this->dataActions = $dataActions;
+     }
+
+
+     function __construct(){
+
+        $this->setDataActions(new DataActions(__DIR__));
+
+     }
+
+    
+    public function validate(array $user) :bool{
+        $dataActions = $this->getDataActions();
         $dataActions->setTable("User");
         $dataActions->setColumns("email");
         $dataActions->setCondition("email = '" . $user["email"] ."'");
+        $response = $dataActions->selectColsWhere();
 
-        return $dataActions->selectColsWhere();
+        return (is_array($response)) ? true : false;
     }
 
 
-    /**
-     * processUser 
-     * 
-     * @param array $user 
-     * @param DataActions $dataActions 
-     * @access public
-     * @return void
-     */
 
-    public function processUser(array $user, DataActions $dataActions) :string | bool{
-        $response = $this->validateUser($user,$dataActions);
+    public function registerUser(array $user) :string{
+        $dataActions = $this->getDataActions();
 
-        if($response == false){
-            $dataActions->setTable('User');
-            $dataActions->setColumns("name","email","password","confirm_password");
-            $dataActions->setValues($user["user"],$user["email"],$user["pwd"],$user["confirmPwd"]);
+        $dataActions->setTable('User');
+        $dataActions->setColumns("name","email","password","confirm_password");
+        $dataActions->setValues($user["user"],$user["email"],$user["pwd"],$user["confirmPwd"]);
+        $response = $dataActions->insertValues();
+        
+        return $response;
+    }
 
-            return $dataActions->insertValues();
 
-        }else{
 
-            return "Account already exists";
+    public function loginUser(array $user) :array | bool{
+        $dataActions = $this->getDataActions();
 
-        }
-    }    
+        $dataActions->setTable('User');
+        $dataActions->setColumns("email");
+        $dataActions->setCondition("email = {$user['email']}");
+        $response = $dataActions->selectBy();
+
+        return $response;
+    }
+
+
+
+}    
     
 
 
      
-}

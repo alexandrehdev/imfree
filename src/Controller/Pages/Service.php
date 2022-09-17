@@ -1,6 +1,6 @@
 <?php
  namespace Imfree\Free\Controller\Pages;
- use Imfree\Free\Controller\Pages\User as UserController;
+ use Imfree\Free\Controller\User\User as UserController;
  use Imfree\Free\Controller\Pages\Home;
 
  class Service{
@@ -19,7 +19,7 @@
 
      public static function processData() :void{
         $user = new UserController();
-        $user->registerUser();
+        $user->processRequest();
      }
     
 

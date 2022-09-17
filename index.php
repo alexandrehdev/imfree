@@ -1,6 +1,4 @@
 <?php
     require_once "vendor/autoload.php";
-    use Imfree\Free\Controller\Pages\Home;
-
-    echo Home::getHome();
+    include_once "web/route.php";
 

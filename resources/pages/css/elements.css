@@ -4,6 +4,22 @@
   padding: 0 15px;
 }
 
+a {
+  text-decoration: none;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: var(--main-black);
+    color: var(--main-white);
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.button:hover{opacity: 0.9;}
+
 header {
     position: fixed;
     top: 0;
@@ -69,8 +85,8 @@ header .show-menu{
     color: var(--main-red);
 }
 
-a {
-  text-decoration: none;
+.header-register .button{
+    padding: 8px 25px;
 }
 
 .main-cards{
@@ -155,4 +171,81 @@ a {
     background: transparent;
     cursor: pointer;
 }
+
+.checkin {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--main-black);
+  justify-content: center;
+  align-items: center;
+}
+
+.forms {
+  display: flex;
+  gap: 150px;
+}
+
+.form {
+  background: var(--ter-black);
+  color: var(--main-white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  width: 400px;
+}
+.form div {
+  display: flex;
+  flex-direction: column;
+}
+.form p {margin-bottom: 40px;}
+.form-control {position: relative;}
+.form-control label {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+}
+.form-control input {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--main-white);
+  padding: 10px 5px;
+  color: var(--main-white);
+  margin-bottom: 30px;
+}
+.form-control input::placeholder {
+  color: var(--main-white);
+  opacity: 0.6;
+}
+.form-control img {
+  width: 15px;
+  position: absolute;
+  top: 22px;
+  right: 5px;
+  visibility: hidden;
+}
+.form-control small {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  visibility: hidden;
+}
+.form-control.success input {border-color: var(--main-green);}
+.form-control.success img.ess {visibility: visible;}
+.form-control.error input {border-color: var(--main-red);}
+.form-control.error img.err,
+.form-control.error small {
+  visibility: visible;
+  color: var(--main-red);
+}
+.form input[type=submit] {
+  background: var(--main-purple);
+  color: var(--main-white);
+  padding: 10px 5px;
+  border: 0;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.form input[type=submit]:hover {opacity: 0.8;}
 

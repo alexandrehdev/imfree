@@ -16,21 +16,10 @@ class User{
 
 
     function __construct(){
-       $this->setUserModel(new UserModel()); 
+       $this->userModel = new UserModel;
     } 
-
-
-    public function getUserModel(){
-        return $this->userModel;
-    }
-
-    public function setUserModel(UserModel $userModel){
-        $this->userModel = $userModel;
-    }
-
-
-    
         
+
     public function processRequest(){
        $url = $_SERVER['REQUEST_URI'];
 
@@ -75,20 +64,25 @@ class User{
 
 
     public function processLogin(){
+
        $login = $this->getLoginData();
-       $userModel = $this->getUserModel();
+       $userModel = $this->userModel;
        $validated = $userModel->validate($login);
 
-       return ($validated == true) ? header("Location: /feed") : null;
+       return ($validated == true) ? header("Location: /feed") : false;
+
     }
 
 
     public function processRegister(){
-       $register = $this->getRegisterData(); 
-       $userModel = $this->getUserModel(); 
-       $validated = $userModel->validate($register);
 
-       return ($validated == false) ? $userModel->registerUser($register) : null;
+       $register = $this->getRegisterData(); 
+       $userModel = $this->userModel;
+       $userModel->validate($register);
+
+       /* $userModel->registerUser($register); */
+
+
     }
 
     

@@ -11,14 +11,14 @@ Route::redirect("/checkin", function(){
     Service::callCheckIn();
 });
 
-Route::redirect("/checkin/register", function(){
-    Service::processData();
-});                 
+/* Route::redirect("/checkin/register", function(){ */
+/*     Service::processData(); */
+/* }); */                 
 
 Route::redirect("/checkin/login",function(){
     Service::processData();
 });
 
-Route::redirect("/feed",function(){
-    Service::callLoggedPage();
-});
+/* Route::redirect("/feed",function(){ */
+/*     Service::callLoggedPage(); */
+/* }); */

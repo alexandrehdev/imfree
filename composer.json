@@ -1,0 +1,16 @@
+{
+    "name": "imfree/games",
+    "description": "Let the gamers know all free games on internet",
+    "autoload": {
+        "psr-4": {
+            "Imfree\\Games\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hallysson Alexandre",
+            "email": "hallyssonrdev@gmail.com"
+        }
+    ],
+    "require": {}
+}
